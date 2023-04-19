@@ -39,12 +39,12 @@ function computerWinCounter() {
 
 
 function checkWinner() {
-    if (playerWins == 2) {
+    if (playerWins == 5) {
         alert("Congratulations! You beat the computer. The game will now reset.")
         document.getElementById("computerWinCounter").innerHTML = 0;
         document.getElementById("playerWinCounter").innerHTML = 0;
     
-    } else if (computerWins == 2) {
+    } else if (computerWins == 5) {
         alert ("You lost the game :( Better luck next time.")
         document.getElementById("computerWinCounter").innerHTML = 0;
         document.getElementById("playerWinCounter").innerHTML = 0;
