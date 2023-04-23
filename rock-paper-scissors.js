@@ -20,11 +20,10 @@ button.forEach((selection) => {
 
 let computerScore = 0
 let playerScore = 0
+
 function round(playerChoice) {
     
     let computerChoice = getComputerChoice();
-    
-
     alert(`You have selected ${playerChoice}! Computer has selected ${computerChoice}!`)
 
     if (computerChoice == playerChoice){
@@ -39,31 +38,29 @@ function round(playerChoice) {
         document.querySelector("#computerWinCounter").innerText = ++computerScore;
     }
 
+    console.log(computerScore, playerScore)
     checkWinner()
-
     return;
     }
 
 function checkWinner() {
-    if (playerWins == 5) {
-        alert("Congratulations! You beat the computer. The game will now reset.")
-        document.getElementById("computerWinCounter").innerHTML = 0;
-        document.getElementById("playerWinCounter").innerHTML = 0;
-        computerWins = 0
-        playerWins = 0
-        
-    
-    } else if (computerWins == 5) {
-        alert ("You lost the game :( Better luck next time.")
-        document.getElementById("computerWinCounter").innerHTML = 0;
-        document.getElementById("playerWinCounter").innerHTML = 0;
-        computerWins = 0
-        playerWins = 0
-   
+    if (playerScore == 5 || computerScore == 5) {
+        playerScore = 0;
+        computerScore = 0;
+        document.querySelector('#playerWinCounter').innerText = 0;
+        document.querySelector('#computerWinCounter').innerText = 0;
+        if (playerScore == 5) {
+            alert("Congratulations! You beat the computer. The game will now reset.")
+            let audio = document.querySelector('#winSound');
+            audio.play();
+        } else {
+            alert ("You lost the game :( Better luck next time.")
+            let audio = document.querySelector('#winSound');
+            audio.play();
+        } 
     } else {
-        return;
-    }
-}
+        
+    }}
 
 
 

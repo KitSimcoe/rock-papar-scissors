@@ -9,12 +9,13 @@
     </head>
     <body>
         <div class="scoreContainer">
-        <div class="playerScore">
-            <p id="playerWinCounter"> 0 </p>
+        
+        <div >
+            <p class="scoreKeeper" id="playerWinCounter"> 0 </p>
             <h3>Player Score</h3>
         </div>
-        <div class="computerScore">
-            <p id="computerWinCounter"> 0 </p>
+        <div>
+            <p class="scoreKeeper" id="computerWinCounter"> 0 </p>
             <h3>Computer Score</h3>
         </div>
         </div>
@@ -25,5 +26,7 @@
         <input class="btn" id="Scissors" type="button" value="Scissors"/>
         <script src="rock-paper-scissors.js"></script>
         </div>
+
+        <audio id="winSound" src="sounds/grunt-birthday-party.mp3"></audio>
     </body>
 </html>
