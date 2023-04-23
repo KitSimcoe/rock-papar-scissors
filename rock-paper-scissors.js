@@ -1,6 +1,7 @@
 
 const choices = ["Rock", "Paper", "Scissors"]
 
+
 //gets Computer choice and returns it
 function getComputerChoice() {
     return (choices[(Math.floor(Math.random() * choices.length))]); //maths chooses from array at random.
@@ -13,13 +14,35 @@ let button = document.querySelectorAll('input');
 button.forEach((selection) => {
     selection.addEventListener('click', (e) => {
         console.log(e);
-        alert(selection.value)
+        round(selection.value)
     });
     });
 
+let computerScore = 0
+let playerScore = 0
+function round(playerChoice) {
+    
+    let computerChoice = getComputerChoice();
+    
 
+    alert(`You have selected ${playerChoice}! Computer has selected ${computerChoice}!`)
 
+    if (computerChoice == playerChoice){
+        alert("Draw!");
+    } else if (computerChoice == "Rock" && playerChoice == "Paper") {
+        document.querySelector("#playerWinCounter").innerText = ++playerScore;
+    } else if (computerChoice == "Rock" && playerChoice == "Scissors") {
+        document.querySelector("#playerWinCounter").innerText = ++playerScore;
+    } else if (computerChoice == "Paper" && playerChoice == "Scissors") {
+        document.querySelector("#playerWinCounter").innerText = ++playerScore;
+    } else {
+        document.querySelector("#computerWinCounter").innerText = ++computerScore;
+    }
 
+    checkWinner()
+
+    return;
+    }
 
 function checkWinner() {
     if (playerWins == 5) {
@@ -41,80 +64,6 @@ function checkWinner() {
         return;
     }
 }
-
-function round(playerChoice) {
-
-    // Gets Player selection via buttons on the html & computer choice via function
-    let computerChoice = getComputerChoice();
-
-    alert(`You have selected ${playerChoice} Computer has selected ${computerChoice}`)
-
-    if (computerChoice == "Rock" && playerChoice == "Paper") {
-        alert("You win this round!");
-        playerWinCounter();
-
-    } else if (computerChoice == "Rock" && playerChoice == "Scissors") {
-        alert("You lose this round!");
-        computerWinCounter();
-
-    } else if (computerChoice == "Paper" && playerChoice == "Scissors") {
-        alert("You win this round!");
-        playerWinCounter();
-
-    } else if (computerChoice == "Paper" && playerChoice == "Rock") {
-        alert("You lose this round!");
-        computerWinCounter();
-
-    } else if (computerChoice == "Scissors" && playerChoice == "Paper") {
-        alert("You lose this round!");
-        computerWinCounter();
-
-    } else if (computerChoice == "Scissors" && playerChoice == "Rock") {
-        alert("You win this round!");
-        playerWinCounter();
-
-    } else {
-        alert("Draw!")
-    }
-    
-    console.log(computerWins);
-    checkWinner()
-    return (computerChoice);
-}
-
-
-
-
-
-// function to count player wins
-let playerWins = 0
-
-function playerWinCounter() {
- updatedisplay(++playerWins)
-
-    function updatedisplay(val) {
-    document.getElementById("playerWinCounter").innerText = val; // innerHTML edits the content of the element.
-    }
-}
-
-
-//function to count computer wins
-let computerWins = 0
-console.log(computerWins);
-
-
-function computerWinCounter() {
- updatedisplay(++computerWins)
- 
-
-    function updatedisplay(val) {
-    document.getElementById("computerWinCounter").innerHTML = val;
-    
-    
-    }
-}
-
-
 
 
 
