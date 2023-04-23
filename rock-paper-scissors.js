@@ -24,6 +24,8 @@ let playerScore = 0
 function round(playerChoice) {
     
     let computerChoice = getComputerChoice();
+    
+
     alert(`You have selected ${playerChoice}! Computer has selected ${computerChoice}!`)
 
     if (computerChoice == playerChoice){
@@ -58,7 +60,7 @@ function checkWinner() {
             let audio = document.querySelector('#winSound');
             audio.play();
         } 
-    } else {
+    }else {
         
     }}
 
