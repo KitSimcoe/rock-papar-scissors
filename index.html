@@ -8,19 +8,22 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-
-        <div>
+        <div class="scoreContainer">
+        <div class="playerScore">
             <p id="playerWinCounter"> 0 </p>
             <h3>Player Score</h3>
         </div>
-        <div>
+        <div class="computerScore">
             <p id="computerWinCounter"> 0 </p>
             <h3>Computer Score</h3>
         </div>
-        
-        <input id="Rock" type="button" value="Rock" onclick="round(Rock)"/>
-        <input id="Paper" type="button" value="Paper" onclick="round(Paper)"/>
-        <input id="Scissors" type="button" value="Scissors" onclick="round(Scissors)"/>
+        </div>
+        <div class="roundResult"></div>
+        <div class="btnContainer">
+        <input class="btn" id="Rock" type="button" value="Rock"/>
+        <input class="btn" id="Paper" type="button" value="Paper" />
+        <input class="btn" id="Scissors" type="button" value="Scissors"/>
         <script src="rock-paper-scissors.js"></script>
+        </div>
     </body>
 </html>
